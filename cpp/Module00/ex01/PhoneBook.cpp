@@ -1,0 +1,42 @@
+#include <PhoneBook.h>
+#include <iostream>
+#include <iomanip>
+
+PhoneBook::PhoneBook(void){
+	firstName = "fuckeeeeeeeeeeerrrrrrrr";
+	lastName = "suckeeeeeeeeeeeeeerrrrrr";
+	nickname = "dickeeeeeeerrrrrr";
+	phoneNumber = "11";
+	darkSecret = "69";
+}
+
+void PhoneBook::Set(std::string fN, std::string lN, std::string nN, std::string pN, std::string dS){
+	firstName = fN;
+	lastName = lN;
+	nickname = nN;
+	phoneNumber = pN;
+	darkSecret = dS;
+}
+
+std::string PhoneBook::TextTruncate(std::string text)
+{
+	if (text.length() >= 10)
+	{
+		return (text.substr(0, 9) + ".");
+	}
+	return (text);
+}
+
+void PhoneBook::Show(int index){
+	std::string wait;
+
+	system("cls");
+	std::cout << std::right << std::setw(6) << "Index:" << index << "|";
+	std::cout << std::right << std::setw(10) << TextTruncate(firstName) << "|";
+	std::cout << std::right << std::setw(10) <<  TextTruncate(lastName) << "|";
+	std::cout << std::right << std::setw(10) << TextTruncate(nickname) << std::endl;
+	std::cin.ignore(INT_MAX, '\n');
+	if(getline(std::cin, wait));
+}
+
+PhoneBook::~PhoneBook(){}
