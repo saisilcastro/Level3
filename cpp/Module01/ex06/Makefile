@@ -1,7 +1,7 @@
-NAME = zombie
+NAME = harlFilter
 CPP = g++
 INCLUDE = -I$(CURDIR)
-SRC =	Zombie.cpp main.cpp
+SRC =	Harl.cpp main.cpp
 OBJ = obj
 SRCOBJ = $(SRC:%.cpp=${OBJ}/%.o)
 CREATE = mkdir -p $(1)

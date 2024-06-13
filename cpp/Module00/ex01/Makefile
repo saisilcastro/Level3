@@ -1,5 +1,5 @@
 NAME = contact
-CPP = g++
+CPP = c++
 INCLUDE = -I$(CURDIR)
 SRC =	PhoneBook.cpp \
 		Contact.cpp
@@ -14,7 +14,7 @@ $(NAME): $(SRCOBJ)
 	@$(CPP) $^ $(FLAG) -o $(NAME)
 ${OBJ}/%.o : %.cpp
 	@$(call CREATE,${OBJ})
-	@$(CPP) std=c++98 -c $< -o $@ $(INCLUDE)
+	@$(CPP) -std=c++98 -c $< -o $@ $(INCLUDE)
 clean:
 	@$(call REMOVE,${OBJ})
 fclean: clean

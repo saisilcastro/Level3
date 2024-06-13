@@ -5,6 +5,7 @@
 
 Contact::Contact(void){
 	pos = 0;
+	max = 0;
 }
 
 bool Contact::Insert(void)
@@ -15,7 +16,7 @@ bool Contact::Insert(void)
 	std::string pN;
 	std::string dS;
 
-	system("cls");
+	system("clear");
 	std::cout << "Index: " << pos << std::endl;
 	std::cout << "First Name: ";
 	std::cin.ignore(INT_MAX, '\n');
@@ -33,7 +34,11 @@ bool Contact::Insert(void)
 		std::cout << "No field can be empty";
 		return false;
 	}
-	agenda[pos++ % 8].Set(fN, lN, nN, pN, dS);
+	agenda[pos++].Set(fN, lN, nN, pN, dS);
+	if (max < 8)
+		max++;
+	if (pos >= 8)
+		pos = 0;
 	return true;
 }
 
@@ -43,7 +48,7 @@ void Contact::Menu()
 
 	while (1)
 	{
-		system("cls");
+		system("clear");
 		std::cout << "[ADD] Add a new contact\n";
 		std::cout << "[SEARCH] Search for contact\n";
 		std::cout << "[EXIT] Exit the app\n";
@@ -55,9 +60,14 @@ void Contact::Menu()
 		if (command == "SEARCH")
 		{
 			int	index;
-			std::cout << "Digit the index: ";
+
+			system("clear");
+			for (int i = 0; i < max; i++)
+				agenda[i].List(i);
+			std::cout << std::endl << "Digit the index: ";
 			std::cin >> index;
-			agenda[index].Show(index);
+			if (index >= 0 && index < 8)
+				agenda[index].Show();
 		}
 	}
 }

@@ -14,7 +14,7 @@ $(NAME): $(SRCOBJ)
 ${OBJ}/%.o : %.cpp
 	@printf "building "$@"\n"
 	@$(call CREATE,${OBJ})
-	@$(CPP) std=c++98 -c $< -o $@
+	@$(CPP) -std=c++98 -c $< -o $@
 clean:
 	@$(call REMOVE,${OBJ})
 fclean: clean

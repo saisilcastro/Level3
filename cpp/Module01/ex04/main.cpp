@@ -4,8 +4,10 @@
 int	replace(std::string file, std::string original, std::string to_replace);
 
 int	main(int argc, char **argv) {
-	if (argc != 4)
+	if (argc != 4) {
 		std::cout << "wrong number of inputs" << std::endl;
+		return (-1);
+	}
 	return (replace(argv[1], argv[2], argv[3]));
 }
 
@@ -23,9 +25,10 @@ int	replace(std::string file, std::string original, std::string to_replace) {
 	while (!input.eof()) {
 		std::string line;
 		getline(input, line);
-		std::size_t	pos = line.find(original);
-		if (pos != std::string::npos)
-		{
+		while (1) {
+			std::size_t	pos = line.find(original);
+			if (pos == std::string::npos)
+				break ;				
 			line.erase(pos, original.length());
 			line.insert(pos, to_replace);
 		}

@@ -12,6 +12,7 @@ class Contact{
     private:
         PhoneBook   agenda[8];
         int         pos;
+        int         max;
 };
 
 #endif
