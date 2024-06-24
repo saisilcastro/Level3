@@ -17,7 +17,9 @@ class Fixed {
 		~Fixed(void);
 	private:
 		int	fixedPointNumber;
-		static const int	fractionalBit;
+		static const int	fractionalBit = 8;
 };
+
+std::ostream & operator << (std::ostream & out, const Fixed & pointer);
 
 #endif

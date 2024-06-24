@@ -1,17 +1,17 @@
 #include <cstdlib>
-#include "ScravTrap.h"
+#include "FlagTrap.h"
 
-void fight_till_die(ScravTrap & fucker, ScravTrap & sucker);
+void fight_till_die(FlagTrap & fucker, FlagTrap & sucker);
 
 int	main(void) {
-	ScravTrap scrav1("fucker");
-	ScravTrap scrav2(scrav1);
+	FlagTrap scrav1("fucker");
+	FlagTrap scrav2(scrav1);
 	scrav2.setName("sucker");
 	fight_till_die(scrav1, scrav2);
 	return (0);
 }
 
-void fight_till_die(ScravTrap & fucker, ScravTrap & sucker) {
+void fight_till_die(FlagTrap & fucker, FlagTrap & sucker) {
 	bool damaged;
 	srand(time(NULL));
 	while (fucker.getHitPoint() && sucker.getHitPoint()) {
@@ -22,7 +22,7 @@ void fight_till_die(ScravTrap & fucker, ScravTrap & sucker) {
 			sucker.beRepaired(std::rand() % 10);
 		}
 		else
-			sucker.guardGate();
+			sucker.highFivesGuys();
 		sucker.attack(fucker.getName());
 		damaged = rand() % 2;
 		if (damaged) {
@@ -30,6 +30,6 @@ void fight_till_die(ScravTrap & fucker, ScravTrap & sucker) {
 			fucker.beRepaired(std::rand() % 10);
 		}
 		else
-			fucker.guardGate();
+			fucker.highFivesGuys();
 	}
 }

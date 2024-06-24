@@ -1,6 +1,7 @@
 #include "ScravTrap.h"
 
 ScravTrap::ScravTrap(void) {
+	ClapTrap();
 	std::cout << "ScravTrap has been created\n";
 	hit_point = 100;
 	energy_point = 50;
@@ -8,8 +9,8 @@ ScravTrap::ScravTrap(void) {
 }
 
 ScravTrap::ScravTrap(std::string _name) {
+	setName(_name);
 	std::cout << "ScravTrap has been created\n";
-	name = _name;
 	hit_point = 100;
 	energy_point = 50;
 	attack_damage = 20;

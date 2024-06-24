@@ -8,6 +8,8 @@ class ScravTrap : public ClapTrap {
 	ScravTrap(void);
 	ScravTrap(std::string name);
 	ScravTrap(const ScravTrap & pointer);
+	void guardGate(void);
+	ScravTrap & operator = (const ScravTrap &);
 	~ScravTrap(void);
 };
 

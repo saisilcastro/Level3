@@ -1,6 +1,5 @@
 #include "Fixed.h"
-
-const int Fixed::fractionalBit = 8;
+#include <cmath>
 
 Fixed::Fixed(void) {
 	fixedPointNumber = 0;
@@ -14,31 +13,30 @@ Fixed::Fixed(const Fixed & pointer) {
 
 Fixed::Fixed(const int value) {
 	std::cout << "Int constructor called" << std::endl;
-
-	fixedPointNumber = ((value << fractionalBit) & 0x7FFFFF00);
-	fixedPointNumber |= (value & 0x80000000);
+	fixedPointNumber = (value * (1 << fractionalBit));
 }
 
 Fixed::Fixed(const float value) {
 	std::cout << "Float constructor called" << std::endl;
+	fixedPointNumber = roundf(value * (1 << fractionalBit));
 }
 
 void Fixed::setRawBits(int const value) {
 	std::cout << "setRawBits member function called" << std::endl;
-	fixedPointNumber = value;
+	fixedPointNumber = (value * (1 << fractionalBit));
 }
 
 int Fixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called" << std::endl;
-	return (fixedPointNumber);
+	return fixedPointNumber;
 }
 
 int Fixed::toInt(void) const {
-	return ((fixedPointNumber & 0x7FFFFF00) >> fractionalBit);
+	return (fixedPointNumber >> fractionalBit);
 }
 
 float Fixed::toFloat(void) const {
-	return (0);
+	return (float)fixedPointNumber / (float)(1 << fractionalBit);
 }
 
 Fixed & Fixed::operator=(const Fixed & pointer) {
@@ -46,6 +44,10 @@ Fixed & Fixed::operator=(const Fixed & pointer) {
 	if (this != &pointer)
 		fixedPointNumber = pointer.getRawBits();
 	return (*this);
+}
+
+std::ostream & operator << (std::ostream & out, const Fixed & pointer) {
+	return (out << pointer.toFloat());
 }
 
 Fixed::~Fixed(void) {

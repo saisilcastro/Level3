@@ -13,7 +13,7 @@ class Fixed {
 		~Fixed(void);
 	private:
 		int	fixedPointNumber;
-		static int	fractionalBit;
+		static const int	fractionalBit = 8;
 };
 
 #endif

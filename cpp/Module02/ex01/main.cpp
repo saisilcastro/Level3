@@ -1,28 +1,16 @@
 #include "Fixed.h"
 #include <cmath>
 
-int setFloat(float number) {
-	int count = (int)number;
-	int	exp = 0;
-
-	while (count) {
-		count /= 10;
-		exp++;
-	}
-	if (exp == 0) {
-		float	result = pow(number, 1);
-		int base = 10;
-		while ((int)result <= 0) {
-			result = base * pow(number, 1);
-			base *= 10;
-			exp--;
-		}
-		std::cout << "**number: " << exp << std::endl;
-	}
-	return (0);
-}
-
 int main(void) {
-	setFloat(0.0000000450);
+	Fixed x;
+	Fixed y(x);
+	Fixed i(150);
+	Fixed j(3.1415f);
+	x.setRawBits(1.65f);
+	y.setRawBits(25.2627f);
+	std::cout << x << std::endl;
+	std::cout << y << std::endl;
+	std::cout << i << std::endl;
+	std::cout << j << std::endl;
 	return (0);
 }
