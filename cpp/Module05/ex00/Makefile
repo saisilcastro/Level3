@@ -1,21 +1,22 @@
-NAME = a
-CPP = g++
-INCLUDE = -I$(CURDIR)
-SRC =	Fixed.cpp main.cpp
+NAME = bureaucrat
+SRC = main.cpp Bureaucrat.cpp
 OBJ = obj
 SRCOBJ = $(SRC:%.cpp=${OBJ}/%.o)
 CREATE = mkdir -p $(1)
 REMOVE = rm -rf $(1)
-FLAG = -Wall -Wextra -Werror
+FLAG = -Wall -Werror -Wextra
+CPP = c++
 
 all: $(NAME)
 $(NAME): $(SRCOBJ)
+	@printf "compiling done"
 	@$(CPP) $^ $(FLAG) -o $(NAME)
 ${OBJ}/%.o : %.cpp
+	@printf "building "$@"\n"
 	@$(call CREATE,${OBJ})
-	@$(CPP) -std=c++98 -c $< -o $@ $(INCLUDE)
+	@$(CPP) -std=c++98 -c $< -o $@
 clean:
-	@$(call REMOVE,${OBJ})
+	$(call REMOVE,${OBJ})
 fclean: clean
-	@$(call REMOVE,${NAME})
+	$(call REMOVE,${NAME})
 re: fclean all
