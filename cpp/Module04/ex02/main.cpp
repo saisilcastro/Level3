@@ -3,8 +3,8 @@
 #include <cstdio>
 
 int main(void) {
-	const Animal* dog[5];
-	const Animal* cat[5];
+	const AAnimal* dog[5];
+	const AAnimal* cat[5];
 
 	for (int i = 0; i < 5; i++) {
 		dog[i] = new Dog();

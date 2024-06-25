@@ -1,5 +1,5 @@
 NAME = animal
-SRC = main.cpp Animal.cpp Brain.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRC = main.cpp AAnimal.cpp Brain.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ = obj
 SRCOBJ = $(SRC:%.cpp=${OBJ}/%.o)
 CREATE = mkdir -p $(1)

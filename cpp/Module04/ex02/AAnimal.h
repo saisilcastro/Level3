@@ -1,19 +1,19 @@
-#ifndef ANIMAL_H
-#define ANIMAL_H
+#ifndef AANIMAL_H
+#define AANIMAL_H
 
 #include "Brain.h"
 #include <iostream>
 
-class Animal {
+class AAnimal {
 	public:
-		Animal(void);
-		Animal(std::string);
-		Animal(const Animal &);
+		AAnimal(void);
+		AAnimal(std::string);
+		AAnimal(const AAnimal &);
 		std::string getType(void) const;
 		virtual void makeSound(void) const;
 		virtual Brain* getBrain(void) const = 0;
-		Animal & operator = (Animal const &);
-		virtual ~Animal(void);
+		AAnimal & operator = (AAnimal const &);
+		virtual ~AAnimal(void);
 	protected:
 		std::string type;
 };

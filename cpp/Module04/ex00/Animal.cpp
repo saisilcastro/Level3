@@ -23,7 +23,7 @@ void Animal::makeSound(void) const {
 	std::cout << "Aaaaaaaaaiiiiiiiii ze da manga!\n";
 }
 
-Animal & Animal::operator = (const Animal & pointer) {
+Animal & Animal::operator = (Animal const & pointer) {
 	std::cout << "Animal operator has been called\n";
 	if (this != &pointer)
 		type = pointer.type;
