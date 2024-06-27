@@ -18,6 +18,8 @@ public:
     Bureaucrat(void);
     Bureaucrat(std::string, short);
     Bureaucrat(Bureaucrat const &);
+    void incGrade(void);
+    void decGrade(void);
 	std::string getName(void) const;
     short getGrade(void) const;
     void checkGrade(int min, int max) const;

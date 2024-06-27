@@ -2,7 +2,13 @@
 
 int main(void) {
 	try {
-		Bureaucrat jerk("fucker", 0);
+		Bureaucrat jerk("fucker", 1);
+		jerk.decGrade();
+		std::cout << jerk << std::endl;
+		jerk.incGrade();
+		std::cout << jerk << std::endl;
+		jerk.incGrade();
+		std::cout << jerk << std::endl;
 		jerk.checkGrade(1, 150);
 	}
 	catch (const std::exception& e) {

@@ -1,5 +1,5 @@
 NAME = bureaucrat
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 OBJ = obj
 SRCOBJ = $(SRC:%.cpp=${OBJ}/%.o)
 CREATE = mkdir -p $(1)

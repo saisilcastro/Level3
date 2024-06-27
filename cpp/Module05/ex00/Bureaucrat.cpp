@@ -22,6 +22,14 @@ short Bureaucrat::getGrade(void) const {
     return grade;
 }
 
+void Bureaucrat::incGrade(void) {
+    grade--;
+}
+
+void Bureaucrat::decGrade(void) {
+    grade++;
+}
+
 void Bureaucrat::checkGrade(int max, int min) const {
     if (grade < max)
         throw GradeHandler("Your bloody grade is too high");
