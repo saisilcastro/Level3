@@ -76,7 +76,8 @@ Fixed Fixed::operator / (const Fixed & pointer) {
 }
 
 Fixed & Fixed::operator ++ (void) {
-	fixedPointNumber = roundf((toFloat() + 1) * (1 << fractionalBit));
+	//fixedPointNumber = roundf((toFloat() + 1) * (1 << fractionalBit)); // this makes sense
+	fixedPointNumber++; // this way is to awkward to me but it's what subject asks
 	return (*this);
 }
 
@@ -87,7 +88,8 @@ Fixed Fixed::operator ++ (int) {
 }
 
 Fixed & Fixed::operator -- (void) {
-	fixedPointNumber = roundf((toFloat() - 1) * (1 << fractionalBit));
+	//fixedPointNumber = roundf((toFloat() - 1) * (1 << fractionalBit)); // this makes sense
+	fixedPointNumber--; // this way is to awkward to me but it's what subject asks
 	return (*this);
 }
 

@@ -66,8 +66,9 @@ void Contact::Menu()
 				agenda[i].List(i);
 			std::cout << std::endl << "Digit the index: ";
 			std::cin >> index;
-			if (index >= 0 && index < 8)
+			if (index >= 0 && index < 8 && index < max)
 				agenda[index].Show();
+			std::cin.clear();
 		}
 	}
 }

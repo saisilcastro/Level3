@@ -19,3 +19,5 @@ clean:
 fclean: clean
 	$(call REMOVE,${NAME})
 re: fclean all
+leak:
+	valgrind --leak-check=full ./$(NAME)

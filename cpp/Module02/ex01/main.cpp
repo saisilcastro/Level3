@@ -2,15 +2,18 @@
 #include <cmath>
 
 int main(void) {
-	Fixed x;
-	Fixed y(x);
-	Fixed i(150);
-	Fixed j(3.1415f);
-	x.setRawBits(1.65f);
-	y.setRawBits(25.2627f);
-	std::cout << x << std::endl;
-	std::cout << y << std::endl;
-	std::cout << i << std::endl;
-	std::cout << j << std::endl;
+	Fixed a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
+	a = Fixed( 1234.4321f );
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return (0);
 }

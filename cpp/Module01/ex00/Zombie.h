@@ -9,7 +9,7 @@ class Zombie {
 		void	annouce(void);
 		~Zombie();
 	private:
-	std::string _name;
+		std::string name;
 };
 
 #endif // ZOMBIE_H

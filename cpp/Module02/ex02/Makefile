@@ -1,5 +1,5 @@
-NAME = a
-CPP = g++
+NAME = run
+CPP = c++
 INCLUDE = -I$(CURDIR)
 SRC =	Fixed.cpp main.cpp
 OBJ = obj

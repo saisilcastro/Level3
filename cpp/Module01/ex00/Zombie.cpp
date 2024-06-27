@@ -1,13 +1,13 @@
 #include "Zombie.h"
 
-Zombie::Zombie(std::string name) {
-	_name = name;
+Zombie::Zombie(std::string _name) {
+	name = _name;
 }
 
 void	Zombie::annouce(void) {
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 Zombie::~Zombie(void) {
-	std::cout << _name << " has been killed" << std::endl;
+	std::cout << name << " has been killed" << std::endl;
 }

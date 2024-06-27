@@ -5,13 +5,27 @@ void	inc_and_dec(void);
 void	logic_condition(void);
 void	math_operation(void);
 void	min_and_max(void);
+void	my_test(void);
 
 int main(void) {
-	//inc_and_dec();
-	//logic_condition();
-	//math_operation();
-	min_and_max();
+	// Fixed a;
+	// Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	// std::cout << a << std::endl;
+	// std::cout << ++a << std::endl;
+	// std::cout << a << std::endl;
+	// std::cout << a++ << std::endl;
+	// std::cout << a << std::endl;
+	// std::cout << b << std::endl;
+	// std::cout << Fixed::max( a, b ) << std::endl;
+	my_test();
 	return (0);
+}
+
+void my_test(void) {
+	inc_and_dec();
+	logic_condition();
+	math_operation();
+	min_and_max();
 }
 
 void	min_and_max(void) {
