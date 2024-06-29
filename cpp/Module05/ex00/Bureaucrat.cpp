@@ -1,18 +1,13 @@
 #include "Bureaucrat.h"
 
 Bureaucrat::Bureaucrat(void) : name("nameless") {
-	std::cout << "Bureaucrat has been created\n";
     srand(time(NULL));
     grade = (rand() % 299) + 1;
 }
 
-Bureaucrat::Bureaucrat(std::string _name, short _grade) : name(_name), grade(_grade) {
-	std::cout << "Bureaucrat has been created\n";
-}
+Bureaucrat::Bureaucrat(std::string _name, short _grade) : name(_name), grade(_grade) {}
 
-Bureaucrat::Bureaucrat(Bureaucrat const & pointer) : name(pointer.name), grade(pointer.grade) {
-	std::cout << "Bureaucrat has been created\n";
-}
+Bureaucrat::Bureaucrat(Bureaucrat const & pointer) : name(pointer.name), grade(pointer.grade) {}
 
 std::string Bureaucrat::getName(void) const {
 	return name;
@@ -23,10 +18,14 @@ short Bureaucrat::getGrade(void) const {
 }
 
 void Bureaucrat::incGrade(void) {
+    if (grade <= 1)
+        throw GradeHandler("you reach the top of the grade. Can't increase anymore");
     grade--;
 }
 
 void Bureaucrat::decGrade(void) {
+    if (grade >= 150)
+        throw GradeHandler("you reach the bottom of the grade. Can't decrease anymore");
     grade++;
 }
 
@@ -37,9 +36,10 @@ void Bureaucrat::checkGrade(int max, int min) const {
         throw GradeHandler("Your bloody grade is too low");
 }
 
+
+
 Bureaucrat & Bureaucrat::operator = (Bureaucrat const& pointer) {
-	std::cout << "Bureaucrat operator has been called\n";
-    if (this!= &pointer) {
+    if (this != &pointer) {
         name = pointer.name;
         grade = pointer.grade;
     }
@@ -58,6 +58,4 @@ const char* Bureaucrat::GradeHandler::what() const throw() {
 
 Bureaucrat::GradeHandler::~GradeHandler() throw() {}
 
-Bureaucrat::~Bureaucrat(void) {
-    std::cout << "Bureaucrat has been destroyed\n";
-}
+Bureaucrat::~Bureaucrat(void) {}

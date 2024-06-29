@@ -1,8 +1,10 @@
+#pragma once
 #ifndef FORM_H
 #define FORM_H
 
 #include "Bureaucrat.h"
 
+class Bureaucrat;
 class Form {
 	public:
 		class FormHandler : public std::exception {
@@ -19,9 +21,8 @@ class Form {
 		std::string getName(void) const;
 		short getSignGrade(void) const;
 		short getExecGrade(void) const;
-		bool isSign(void) const;
-		void beSigned(Bureaucrat & bureaucrat);
-		void signForm(Bureaucrat & bureaucrat);
+		bool isSigned(void) const;
+		void beSigned(Bureaucrat &);
 		Form & operator = (Form const &);
 		~Form(void);
 	private:

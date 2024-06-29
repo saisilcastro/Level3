@@ -5,9 +5,9 @@
 #include <iostream>
 #include <stdexcept>
 #include <cstdlib>
-#include "Form.h"
+#include "AForm.h"
 
-class Form;
+class AForm;
 class Bureaucrat {
 public:
     class GradeHandler : public std::exception {
@@ -26,7 +26,8 @@ public:
 	std::string getName(void) const;
     short getGrade(void) const;
     void checkGrade(int min, int max) const;
-    void signForm(Form &);
+    void signForm(AForm &);
+    void executeForm(AForm const &) const;
     Bureaucrat & operator = (Bureaucrat const &);
     ~Bureaucrat(void);
 private:

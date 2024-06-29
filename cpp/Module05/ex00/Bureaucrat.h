@@ -23,6 +23,7 @@ public:
 	std::string getName(void) const;
     short getGrade(void) const;
     void checkGrade(int min, int max) const;
+    void signForm(Form &);
     Bureaucrat & operator = (Bureaucrat const &);
     ~Bureaucrat(void);
 private:
