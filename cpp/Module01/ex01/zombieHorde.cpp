@@ -3,15 +3,20 @@
 
 std::string	itoa(int number) {
 	std::string snumber = "";
-	int	tenth = number;
+	long	tenth = number;
 	int	len  = 0;
 
 	while (tenth) {
 		tenth /= 10;
 		len++;
 	}
+	if (number < 0)
+	{
+		snumber += "-";
+		tenth = (long)number * -1;
+	}
 	for (int i = len; i; i--)
-		snumber += (number % (int)pow(10, i) / (int)pow(10, i - 1)) + 0x30;
+		snumber += ((tenth % (long)pow(10, i)) / pow(10, i - 1)) + 0x30;
 	return snumber;
 }
 

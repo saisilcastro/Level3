@@ -27,7 +27,7 @@ void shrubberyExecute(void) {
 		ShrubberyCreationForm shrubbery;
 		Bureaucrat fucker("Fucker", 80);
 		fucker.signForm(shrubbery);
-		shrubbery.execute(fucker);
+		fucker.executeForm(shrubbery);
 	}
 	catch (std::exception & e) {
 		std::cout << "Shrubbery error: " << e.what() << std::endl;
@@ -39,7 +39,7 @@ void robotomyExecute(void) {
 		RobotomyRequestForm robotize;
 		Bureaucrat fucker("Fucker", 45);
 		fucker.signForm(robotize);
-		robotize.execute(fucker);
+		fucker.executeForm(robotize);
 	}
 	catch (std::exception & e) {
 		std::cout << "Robotization error: " << e.what() << std::endl;
@@ -51,7 +51,7 @@ void presidentalPardomExecute(void) {
 		PresidentialPardomForm pardom;
 		Bureaucrat fucker("Fucker", 5);
 		fucker.signForm(pardom);
-		pardom.execute(fucker);
+		fucker.executeForm(pardom);
 	}
 	catch (std::exception & e) {
 		std::cout << "Presidential error: " << e.what() << std::endl;
