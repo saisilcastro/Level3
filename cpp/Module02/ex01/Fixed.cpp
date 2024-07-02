@@ -2,8 +2,8 @@
 #include <cmath>
 
 Fixed::Fixed(void) {
-	fixedPointNumber = 0;
 	std::cout << "Default constructor called" << std::endl;
+	fixedPointNumber = 0;
 }
 
 Fixed::Fixed(const Fixed & pointer) {

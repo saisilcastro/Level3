@@ -35,28 +35,28 @@ float Fixed::toFloat(void) const {
 
 Fixed & Fixed::operator=(const Fixed & pointer) {
 	if (this != &pointer)
-		fixedPointNumber = pointer.getRawBits();
+		fixedPointNumber = pointer.fixedPointNumber;
 	return (*this);
 }
 
 bool Fixed::operator > (const Fixed & pointer) {
-	return fixedPointNumber > pointer.getRawBits();
+	return fixedPointNumber > pointer.fixedPointNumber;
 }
 
 bool Fixed::operator >= (const Fixed & pointer) {
-	return fixedPointNumber >= pointer.getRawBits();
+	return fixedPointNumber >= pointer.fixedPointNumber;
 }
 
 bool Fixed::operator == (const Fixed & pointer) {
-	return fixedPointNumber == pointer.getRawBits();
+	return fixedPointNumber == pointer.fixedPointNumber;
 }
 
 bool Fixed::operator < (const Fixed & pointer) {
-	return fixedPointNumber < pointer.getRawBits();
+	return fixedPointNumber < pointer.fixedPointNumber;
 }
 
 bool Fixed::operator <= (const Fixed & pointer) {
-	return fixedPointNumber <= pointer.getRawBits();
+	return fixedPointNumber <= pointer.fixedPointNumber;
 }
 
 Fixed Fixed::operator + (const Fixed & pointer) {

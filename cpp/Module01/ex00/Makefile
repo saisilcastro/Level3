@@ -1,5 +1,5 @@
 NAME = zombie
-CPP = g++
+CPP = c++
 INCLUDE = -I$(CURDIR)
 SRC =	Zombie.cpp main.cpp
 OBJ = obj

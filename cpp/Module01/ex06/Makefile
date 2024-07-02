@@ -1,5 +1,5 @@
 NAME = harlFilter
-CPP = g++
+CPP = c++
 INCLUDE = -I$(CURDIR)
 SRC =	Harl.cpp main.cpp
 OBJ = obj

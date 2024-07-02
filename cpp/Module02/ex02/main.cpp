@@ -6,19 +6,24 @@ void	logic_condition(void);
 void	math_operation(void);
 void	min_and_max(void);
 void	my_test(void);
+void	subject(void);
 
 int main(void) {
-	// Fixed a;
-	// Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	// std::cout << a << std::endl;
-	// std::cout << ++a << std::endl;
-	// std::cout << a << std::endl;
-	// std::cout << a++ << std::endl;
-	// std::cout << a << std::endl;
-	// std::cout << b << std::endl;
-	// std::cout << Fixed::max( a, b ) << std::endl;
-	my_test();
+	subject();
+	//my_test();
 	return (0);
+}
+
+void	subject(void) {
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 }
 
 void my_test(void) {

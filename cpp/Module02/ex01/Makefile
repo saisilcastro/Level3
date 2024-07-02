@@ -1,5 +1,5 @@
-NAME = run
-CPP = g++
+NAME = fixed
+CPP = c++
 INCLUDE = -I$(CURDIR)
 SRC =	Fixed.cpp main.cpp
 OBJ = obj
@@ -19,3 +19,5 @@ clean:
 fclean: clean
 	@$(call REMOVE,${NAME})
 re: fclean all
+leak:
+	valgrind --leak-check=full ./$(NAME)

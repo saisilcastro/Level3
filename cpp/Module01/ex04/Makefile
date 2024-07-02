@@ -1,5 +1,5 @@
 NAME = replace
-CPP = g++
+CPP = c++
 INCLUDE = -I$(CURDIR)
 SRC =	main.cpp
 OBJ = obj

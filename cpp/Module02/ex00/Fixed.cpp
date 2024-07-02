@@ -1,11 +1,11 @@
 #include "Fixed.h"
 
 Fixed::Fixed(void) {
-	fixedPointNumber = 0;
 	std::cout << "Default constructor called" << std::endl;
+	fixedPointNumber = 0;
 }
 
-Fixed::Fixed(const Fixed & pointer) {
+Fixed::Fixed(const Fixed & pointer){
 	std::cout << "Copy constructor called" << std::endl;
 	*this = pointer;
 }
